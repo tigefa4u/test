@@ -9,6 +9,4 @@ docker_builder:
     DOCKER_PASSWORD: ENCRYPTED[f5837087e13403c1483dbeeb520330ccbf20981b99c7f58b409a7adb1f4c16df8ab8aabdb5bf269e639e1759377231e3]
   build_script: docker build --tag tigefa/bionic:i386 .
   login_script: docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
-  tag_script: docker tag tigefa/bionic:i386 tigefa/bionic:x86
   push_script: docker push tigefa/bionic:i386
-  push_script: docker push tigefa/bionic:x86

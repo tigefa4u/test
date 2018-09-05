@@ -1,0 +1,12 @@
+container:
+  image: tigefa/bionic
+  cpu: 8
+  memory: 21
+
+docker_builder:
+  env:
+    DOCKER_USERNAME: ENCRYPTED[...]
+    DOCKER_PASSWORD: ENCRYPTED[...]
+  build_script: docker build --tag tigefa/bionic:i386 .
+#  login_script: docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+#  push_script: docker push myrepo/foo:$CIRRUS_TAG

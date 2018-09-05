@@ -10,7 +10,7 @@ RUN /bd_build/prepare.sh && \
 
 ENV DEBIAN_FRONTEND="teletype" \
     LANG="id_ID.UTF-8" \
-    LANGUAGE="id_ID:en" \
+    LANGUAGE="id_ID:id" \
     LC_ALL="id_ID.UTF-8"
 
 CMD ["/sbin/my_init"]

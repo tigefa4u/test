@@ -4,7 +4,7 @@ source /bd_build/buildconfig
 set -x
 
 ## Often used tools.
-$minimal_apt_get_install curl wget netcat nano p7zip p7zip-full zip unzip rar unrar bash bash-completion tzdata less vim-tiny psmisc gpg-agent dirmngr
+$minimal_apt_get_install curl wget netcat nano p7zip p7zip-full zip unzip rar unrar bash bash-completion tzdata less vim-tiny psmisc dirmngr gnupg gnupg2
 ln -s /usr/bin/vim.tiny /usr/bin/vim
 
 ## This tool runs a command as another user and sets $HOME.

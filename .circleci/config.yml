@@ -10,7 +10,7 @@ jobs:
       - run:
           name: Requirements
           command: |
-            apt-get update -yqq && apt-get dist-upgrade -yqq && apt-get install -yqq sudo lsb-base lsb-release apt-transport-https ca-certificates software-properties-common dirmngr gnupg gnupg2 wget curl netcat aria2 whois figlet git-all p7zip p7zip-full zip unzip
+            apt-get update -yqq && apt-get dist-upgrade -yqq && apt-get install -yqq sudo lsb-base lsb-release apt-transport-https ca-certificates software-properties-common dirmngr gnupg gnupg2 wget curl netcat aria2 whois figlet git p7zip p7zip-full zip unzip
             curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
             apt-get install -yqq nodejs python-pip python3-pip wget aria2 httpie ffmpeg youtube-dl speedtest-cli
 
@@ -29,7 +29,6 @@ jobs:
           command: |
             docker pull tigefa/bionic
             docker pull tigefa/bionic:i386
-            docker pull tigefa/bionic:buildpack
             docker pull tigefa/debian
             docker pull tigefa/dropbox
             docker pull redis
@@ -44,5 +43,4 @@ jobs:
             docker images
             speedtest --share --secure
 
-      - store_artifacts:
-          path: /root/project/tigefa4u/test
+      - store_artifacts

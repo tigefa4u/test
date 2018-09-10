@@ -45,4 +45,4 @@ jobs:
             speedtest --share --secure
 
       - store_artifacts:
-          path: $CIRCLE_WORKING_DIRECTORY/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
+          path: /root/project/tigefa4u/test

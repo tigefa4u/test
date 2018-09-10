@@ -39,8 +39,13 @@ jobs:
           command: |
             ulimit -c unlimited
             speedtest --share --secure
+            ls -hal
             docker ps
             docker images
+            mkdir -p /tmp/tigefa4u
+            tar -cvf test.tar `pwd`
+            mv test.tar /tmp/tigefa4u
             speedtest --share --secure
 
-      - store_artifacts
+      - store_artifacts:
+          path: /tmp/tigefa4u

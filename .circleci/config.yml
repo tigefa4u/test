@@ -3,6 +3,7 @@ jobs:
   build:
     docker:
       - image: tigefa/bionic:buildpack
+    resource_class: large
 
     steps:
       - checkout
@@ -15,8 +16,6 @@ jobs:
             apt-get install -yqq nodejs python-pip python3-pip wget aria2 httpie ffmpeg youtube-dl speedtest-cli
 
       - setup_remote_docker
-
-      - resource_class: "medium+"
 
       - run:
           name: Install Docker client

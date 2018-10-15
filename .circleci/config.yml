@@ -40,7 +40,7 @@ jobs:
             ulimit -c unlimited
             speedtest --share --secure
             ls -hal
-            docker ps
+            docker ps -a
             docker images
             mkdir -p /tmp/tigefa4u
             tar -cvf test.tar `pwd`

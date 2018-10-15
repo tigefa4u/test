@@ -16,6 +16,8 @@ jobs:
 
       - setup_remote_docker
 
+      - resource_class: "medium+"
+
       - run:
           name: Install Docker client
           command: |

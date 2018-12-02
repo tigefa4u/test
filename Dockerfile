@@ -39,7 +39,7 @@ RUN apt-get update && \
   apt-get install -y tor deb.torproject.org-keyring lshw && \
   apt-get install -y language-pack-gnome-en language-pack-gnome-id && \
   apt-get autoremove -y && \
-  ln -s /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh && \
+  ln -fs /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh && \
   update-alternatives --set x-terminal-emulator $(which tilix)
 
 RUN ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime && \

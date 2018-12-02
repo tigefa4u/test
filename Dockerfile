@@ -29,6 +29,7 @@ RUN apt-get update && \
   echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
   curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && \
   apt-get update -yqq && apt-get dist-upgrade -yqq && \
+  apt-get install -yqq ubuntu-budgie-desktop && \
   apt-get install -y lubuntu-gtk-desktop && \
   apt-get install -y git git-lfs bzr mercurial subversion command-not-found command-not-found-data gnupg gnupg2 tzdata gvfs-bin && \
   apt-get install -y gnome-system-monitor gnome-usage tilix && \

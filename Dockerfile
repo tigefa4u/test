@@ -50,9 +50,9 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ENV LC_NUMERIC="id_ID.UTF-8" \
     LC_TIME="id_ID.UTF-8" \
-    LC_COLLATE="en_US.UTF-8" \
+    LC_COLLATE="id_ID.UTF-8" \
     LC_MONETARY="id_ID.UTF-8" \
-    LC_MESSAGES="en_US.UTF-8"\
+    LC_MESSAGES="id_ID.UTF-8"\
     LC_PAPER="id_ID.UTF-8" \
     LC_NAME="id_ID.UTF-8" \
     LC_ADDRESS="id_ID.UTF-8" \

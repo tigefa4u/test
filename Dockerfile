@@ -27,6 +27,7 @@ RUN apt-get update && \
   curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && \
   apt-get update -yqq && apt-get dist-upgrade -yqq && \
   apt-get install -yqq plasma-desktop && \
+  apt-get install -y tightvncserver && \
   apt-get install -y git git-lfs bzr mercurial subversion command-not-found command-not-found-data gnupg gnupg2 tzdata gvfs-bin && \
   apt-get install -y gnome-system-monitor gnome-usage tilix && \
   apt-get install -y python-pip python3-pip python-apt python-xlib net-tools telnet bash bash-completion lsb-base lsb-release && \

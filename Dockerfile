@@ -27,14 +27,14 @@ RUN apt-get update && \
   curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && \
   apt-get update -yqq && apt-get dist-upgrade -yqq && \
   apt-get install -yqq plasma-desktop && \
-  apt-get install -y tightvncserver && \
-  apt-get install -y git git-lfs bzr mercurial subversion command-not-found command-not-found-data gnupg gnupg2 tzdata gvfs-bin && \
-  apt-get install -y gnome-system-monitor gnome-usage tilix && \
-  apt-get install -y python-pip python3-pip python-apt python-xlib net-tools telnet bash bash-completion lsb-base lsb-release && \
-  apt-get install -y dconf-cli dconf-editor clipit xclip flashplugin-installer caffeine python3-xlib breeze-cursor-theme htop && \
-  apt-get install -y numix-gtk-theme numix-icon-theme-circle && \
-  apt-get install -y tor deb.torproject.org-keyring lshw && \
-  apt-get install -y hyphen-id aspell-id firefox-locale-id thunderbird-locale-id language-pack-id && \
+  apt-get install -yqq tightvncserver && \
+  apt-get install -yqq git git-lfs bzr mercurial subversion command-not-found command-not-found-data gnupg gnupg2 tzdata gvfs-bin && \
+  apt-get install -yqq gnome-system-monitor gnome-usage tilix && \
+  apt-get install -yqq python-pip python3-pip python-apt python-xlib net-tools telnet bash bash-completion lsb-base lsb-release && \
+  apt-get install -yqq dconf-cli dconf-editor clipit xclip flashplugin-installer caffeine python3-xlib breeze-cursor-theme htop && \
+  apt-get install -yqq numix-gtk-theme numix-icon-theme-circle && \
+  apt-get install -yqq tor deb.torproject.org-keyring lshw && \
+  apt-get install -yqq hyphen-id aspell-id firefox-locale-id thunderbird-locale-id language-pack-id && \
   apt-get autoremove -y && \
   ln -fs /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh && \
   update-alternatives --set x-terminal-emulator $(which tilix)

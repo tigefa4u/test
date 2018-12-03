@@ -1,4 +1,4 @@
-FROM tigefa/bionic
+FROM tigefa/bionic:buildpack
 
 CMD ["/sbin/my_init"]
 RUN mkdir -p /etc/my_init.d
@@ -16,6 +16,7 @@ RUN apt-get update && \
   add-apt-repository ppa:transmissionbt/ppa -y && \
   add-apt-repository ppa:numix/ppa -y && \
   add-apt-repository ppa:numix/numix-daily -y && \
+  add-apt-repository ppa:snwh/ppa -y && \
   add-apt-repository ppa:mc3man/mpv-tests -y && \
   add-apt-repository ppa:qbittorrent-team/qbittorrent-unstable -y && \
   add-apt-repository ppa:neovim-ppa/stable -y && \
@@ -94,6 +95,10 @@ RUN	echo vncpassw | vncpasswd -f > /home/developer/.vnc/passwd && \
   chown -fR developer:developer /home/developer
 
 EXPOSE 5901
+
+HEALTHCHECK --interval=60s --timeout=15s \
+            CMD netstat -lntp | grep -q '0\.0\.0\.0:5901'
+
 ####/Setup VNC####
 
 # CMD ["/home/developer/.vnc/vnc.sh"]

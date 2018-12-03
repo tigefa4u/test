@@ -6,10 +6,6 @@ COPY vncserver.sh /etc/my_init.d/vncserver.sh
 RUN chmod +x /etc/my_init.d/vncserver.sh
 
 RUN apt-get update && \
-	apt-get install -y sudo apt-utils wget curl apt-transport-https dirmngr locales locales-all xz-utils \
-  gnupg gnupg2 tightvncserver xterm fluxbox ca-certificates \
-	libasound2 libdbus-glib-1-2 libgtk2.0-0 libgtk2.0-dev libgtk-3-dev libxrender1 libxt6 tzdata netcat \
-  aria2 whois figlet git p7zip p7zip-full zip unzip && \
   add-apt-repository ppa:webupd8team/terminix -y && \
   add-apt-repository ppa:clipgrab-team/ppa -y && \
   add-apt-repository ppa:uget-team/ppa -y && \
@@ -24,21 +20,20 @@ RUN apt-get update && \
   add-apt-repository ppa:certbot/certbot -y && \
   add-apt-repository ppa:chris-lea/redis-server -y && \
   add-apt-repository ppa:brightbox/ruby-ng -y && \
-  echo "deb [trusted=yes] https://deb.torproject.org/torproject.org bionic main" | sudo tee /etc/apt/sources.list.d/tor.list && \
-  echo "deb-src [trusted=yes] https://deb.torproject.org/torproject.org bionic main" | sudo tee -a /etc/apt/sources.list.d/tor.list && \
+  echo "deb [trusted=yes] https://deb.torproject.org/torproject.org bionic main" | tee /etc/apt/sources.list.d/tor.list && \
+  echo "deb-src [trusted=yes] https://deb.torproject.org/torproject.org bionic main" | tee -a /etc/apt/sources.list.d/tor.list && \
   curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
   echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
   curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && \
   apt-get update -yqq && apt-get dist-upgrade -yqq && \
-  apt-get install -yqq ubuntu-budgie-desktop && \
-  apt-get install -y lubuntu-gtk-desktop && \
+  apt-get install -yqq plasma-desktop && \
   apt-get install -y git git-lfs bzr mercurial subversion command-not-found command-not-found-data gnupg gnupg2 tzdata gvfs-bin && \
   apt-get install -y gnome-system-monitor gnome-usage tilix && \
   apt-get install -y python-pip python3-pip python-apt python-xlib net-tools telnet bash bash-completion lsb-base lsb-release && \
   apt-get install -y dconf-cli dconf-editor clipit xclip flashplugin-installer caffeine python3-xlib breeze-cursor-theme htop && \
   apt-get install -y numix-gtk-theme numix-icon-theme-circle && \
   apt-get install -y tor deb.torproject.org-keyring lshw && \
-  apt-get install -y hyphen-id aspell-id firefox-locale-id thunderbird-locale-id language-pack-id language-pack-gnome-id && \
+  apt-get install -y hyphen-id aspell-id firefox-locale-id thunderbird-locale-id language-pack-id && \
   apt-get autoremove -y && \
   ln -fs /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh && \
   update-alternatives --set x-terminal-emulator $(which tilix)

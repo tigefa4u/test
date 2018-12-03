@@ -36,7 +36,7 @@ RUN apt-get update && \
   apt-get install -y gnome-system-monitor gnome-usage tilix && \
   apt-get install -y python-pip python3-pip python-apt python-xlib net-tools telnet bash bash-completion lsb-base lsb-release && \
   apt-get install -y dconf-cli dconf-editor clipit xclip flashplugin-installer caffeine python3-xlib breeze-cursor-theme htop && \
-  apt-get install -y numix-gtk-theme numix-icon-theme-circle && \
+  apt-get install -y numix-gtk-theme numix-icon-theme-circle menulibre && \
   apt-get install -y tor deb.torproject.org-keyring lshw && \
   apt-get install -y hyphen-id aspell-id firefox-locale-id thunderbird-locale-id language-pack-id language-pack-gnome-id && \
   apt-get autoremove -y && \

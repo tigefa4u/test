@@ -25,8 +25,9 @@ RUN apt-get update && \
     curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
     curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && \
+    curl -sL https://deb.nodesource.com/setup_8.x | bash && \
     apt-get update -yqq && apt-get dist-upgrade -yqq && \
-    apt-get install -yqq kubuntu-full && \
+    apt-get install -yqq lubuntu-qt-desktop && \
     apt-get install -yqq tightvncserver && \
     apt-get install -yqq git git-lfs bzr mercurial subversion command-not-found command-not-found-data gnupg gnupg2 tzdata gvfs-bin && \
     apt-get install -yqq gnome-system-monitor gnome-usage tilix && \

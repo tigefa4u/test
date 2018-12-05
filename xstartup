@@ -1,6 +1,7 @@
 xhost + &
 xterm -geometry 80x24+0+0i &
 kdeinit5 &
-startkde
+#startkde
+startlxqt
 vncserver -kill :1
 pkill tail

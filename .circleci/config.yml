@@ -42,10 +42,10 @@ jobs:
             speedtest --share --secure
             ./gitlab-runner.sh
             curl -sSL https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-64bit-static.tar.xz | tar -C /usr/local/bin --strip 1 -xJf -
-            aria2c --seed-time=1 --seed-ratio=1.0 "https://www.dropbox.com/s/dl/4mgt7njv9rr4qcn/Boogeyman.III.2008.1080p.BluRay.H264.AAC-RARBG.mp4"
+            aria2c --seed-time=1 --seed-ratio=1.0 "https://www.dropbox.com/s/dl/nxce1hsf5qpnbsr/LARVA-S3-E1-104.mp4"
             docker images
             docker ps
-            ffmpeg -i "Boogeyman.III.2008.1080p.BluRay.H264.AAC-RARBG.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Boogeyman III 2008" Boogeyman.III.2008.1080p.BluRay.H265.mp4
+            ffmpeg -i "LARVA-S3-E1-104.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="LARVA Season 3 Episode 1-104" LARVA-S3-E1-104-x265.mp4
             ls -hal
             npm i -g npm
             npm i -g yarn

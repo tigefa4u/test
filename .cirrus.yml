@@ -7,6 +7,6 @@ docker_builder:
   env:
     DOCKER_USERNAME: tigefa
     DOCKER_PASSWORD: ENCRYPTED[c7b8d5f485abaa6e09d2faa6913494ca1385af8ae37e5ad29cef6c73fbb2b0f6a7a3695fa5ce2e76e6a10e181f650b5f]
-  build_script: docker build --tag registry.gitlab.com/tigefa/test/lxqt .
+  build_script: docker build --tag registry.gitlab.com/tigefa/test/xfce .
   login_script: docker login registry.gitlab.com --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
-  push_script: docker push registry.gitlab.com/tigefa/test/lxqt
+  push_script: docker push registry.gitlab.com/tigefa/test/xfce

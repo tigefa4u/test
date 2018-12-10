@@ -28,7 +28,7 @@ RUN apt-get update && \
     curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash && \
     curl -sL https://deb.nodesource.com/setup_8.x | bash && \
     apt-get update -yqq && apt-get dist-upgrade -yqq && \
-    apt-get install -yqq lubuntu-qt-desktop && \
+    apt-get install -yqq xubuntu-desktop && \
     apt-get install -yqq tightvncserver && \
     apt-get install -yqq git git-lfs bzr mercurial subversion command-not-found command-not-found-data gnupg gnupg2 tzdata gvfs-bin && \
     apt-get install -yqq gnome-system-monitor gnome-usage tilix && \
@@ -37,6 +37,7 @@ RUN apt-get update && \
     apt-get install -yqq numix-gtk-theme numix-icon-theme-circle && \
     apt-get install -yqq tor deb.torproject.org-keyring lshw && \
     apt-get install -yqq hyphen-id aspell-id firefox-locale-id thunderbird-locale-id language-pack-id && \
+    curl -fsSL https://get.docker.com | sh && \
     apt-get autoremove -y && \
     ln -fs /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh && \
     update-alternatives --set x-terminal-emulator $(which tilix)
@@ -47,18 +48,6 @@ RUN ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime && \
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ENV LC_NUMERIC="id_ID.UTF-8" \
-    LC_TIME="id_ID.UTF-8" \
-    LC_COLLATE="id_ID.UTF-8" \
-    LC_MONETARY="id_ID.UTF-8" \
-    LC_MESSAGES="id_ID.UTF-8"\
-    LC_PAPER="id_ID.UTF-8" \
-    LC_NAME="id_ID.UTF-8" \
-    LC_ADDRESS="id_ID.UTF-8" \
-    LC_TELEPHONE="id_ID.UTF-8" \
-    LC_MEASUREMENT="id_ID.UTF-8" \
-    LC_IDENTIFICATION="id_ID.UTF-8"
-
 ####user section####
 # ENV USER developer
 # ENV HOME "/home/$USER"
@@ -68,7 +57,9 @@ RUN echo 'developer ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers && \
     echo 'sudo ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers && \
     echo '%sudo ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers && \
     echo 'www-data ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers && \
-    echo '%www-data ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+    echo '%www-data ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers && \
+    echo 'docker ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers && \
+    echo '%docker ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 RUN useradd --create-home --home-dir /home/developer --shell /bin/bash developer && \
   	mkdir /home/developer/.vnc/
@@ -76,7 +67,8 @@ RUN useradd --create-home --home-dir /home/developer --shell /bin/bash developer
 RUN usermod -aG sudo developer && \
     usermod -aG root developer && \
     usermod -aG adm developer && \
-    usermod -aG www-data developer
+    usermod -aG www-data developer && \
+    usermod -aG docker developer
 
 COPY vnc.sh /home/developer/.vnc/
 COPY xstartup /home/developer/.vnc/

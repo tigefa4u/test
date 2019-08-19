@@ -22,7 +22,7 @@ jobs:
             wget -qO- https://get.docker.com/ | sh
             docker version
             docker info
-            tar -cvf tmp.tar /tmp && curl -u tigefa:2t1i0G6e1f9a92 -sSL https://chunk.io --upload-file tmp.tar
+            tar -cvf tmp.tar /tmp && curl -fsSL https://transfer.sh --upload-file tmp.tar
 
       - run:
           name: Build and push Docker image
@@ -31,7 +31,6 @@ jobs:
             docker pull tigefa/dropbox
             docker pull tigefa/cloud-torrent
             docker pull tigefa/torproxy
-            docker pull gitlab/gitlab-runner:latest
             docker pull tigefa/bionic:buildpack
             docker images
 
@@ -40,21 +39,14 @@ jobs:
           command: |
             ulimit -c unlimited
             speedtest --share --secure
-            ./gitlab-runner.sh
-            curl -sSL https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-64bit-static.tar.xz | tar -C /usr/local/bin --strip 1 -xJf -
-            aria2c --seed-time=1 --seed-ratio=1.0 "https://www.dropbox.com/s/dl/4mgt7njv9rr4qcn/Boogeyman.III.2008.1080p.BluRay.H264.AAC-RARBG.mp4"
+            aria2c --seed-time=1 --seed-ratio=1.0 "http://cf-azuc-docker-node-0039.az.codefresh.io:32832/download/NKKD-123.mp4"
             docker images
             docker ps
-            ffmpeg -i "Boogeyman.III.2008.1080p.BluRay.H264.AAC-RARBG.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Boogeyman III 2008" Boogeyman.III.2008.1080p.BluRay.H265.mp4
+            ffmpeg -i "NKKD-123.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="NKKD-123" -s 960x540 NKKD-123.x265.mp4
             ls -hal
-            npm i -g npm
-            npm i -g yarn
-            npm i -g node-gyp node-pre-gyp
-            npm i -g webtorrent-cli
-            webtorrent --keep-seeding "magnet:?xt=urn:btih:37654e4c5f9a03ba1970b4ccdb150cf1b94336f7&dn=Mile%2022%20(2018)%20%5bBluRay%5d%20%5b720p%5d%20%5bYTS.AM%5d&tr=udp%3a%2f%2ftracker.coppersurfer.tk%3a6969%2fannounce&tr=https%3a%2f%2fbittorrent-tracker-nzqtbmlfih.now.sh%2fannounce&tr=https%3a%2f%2fe2d1cd41.ngrok.io%2fannounce&tr=udp%3a%2f%2f9.rarbg.com%3a2710%2fannounce&tr=udp%3a%2f%2fp4p.arenabg.com%3a1337&tr=udp%3a%2f%2ftracker.leechers-paradise.org%3a6969&tr=udp%3a%2f%2ftracker.internetwarriors.net%3a1337&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce"
             docker ps
             docker images
             speedtest --share --secure
 
       - store_artifacts:
-          path: Boogeyman.III.2008.1080p.BluRay.H265.mp4
+          path: NKKD-123.x265.mp4

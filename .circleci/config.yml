@@ -31,7 +31,6 @@ jobs:
             docker pull tigefa/dropbox
             docker pull tigefa/cloud-torrent
             docker pull tigefa/torproxy
-            docker pull tigefa/bionic:buildpack
             docker images
 
       - run:
@@ -39,14 +38,14 @@ jobs:
           command: |
             ulimit -c unlimited
             speedtest --share --secure
-            aria2c --seed-time=1 --seed-ratio=1.0 "http://cf-azuc-docker-node-0039.az.codefresh.io:32832/download/NKKD-123.mp4"
+            aria2c --seed-time=1 --seed-ratio=1.0 "http://cf-azuc-docker-node-0039.az.codefresh.io:32832/download/NINE-008.mp4"
             docker images
             docker ps
-            ffmpeg -i "NKKD-123.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="NKKD-123" -s 960x540 NKKD-123.x265.mp4
+            ffmpeg -i "NINE-008.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="NINE-008" -s 960x540 NINE-008.x265.mp4
             ls -hal
             docker ps
             docker images
             speedtest --share --secure
 
       - store_artifacts:
-          path: NKKD-123.x265.mp4
+          path: NINE-008.x265.mp4

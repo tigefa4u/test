@@ -37,14 +37,14 @@ jobs:
           command: |
             ulimit -c unlimited
             speedtest --share --secure
-            aria2c --seed-time=1 --seed-ratio=1.0 "http://cf-azuc-docker-node-0039.az.codefresh.io:32844/download/JUTA-106.mp4"
+            aria2c --seed-time=1 --seed-ratio=1.0 "http://cf-azuc-docker-node-0039.az.codefresh.io:32844/download/DIC-062.mp4"
             docker images
             docker ps
-            ffmpeg -i "JUTA-106.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="JUTA-106" -s 960x540 JUTA-106.x265.mp4
+            ffmpeg -i "DIC-062.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="DIC-062" -s 960x540 DIC-062.x265.mp4
             ls -hal
             docker ps
             docker images
             speedtest --share --secure
 
       - store_artifacts:
-          path: JUTA-106.x265.mp4
+          path: DIC-062.x265.mp4

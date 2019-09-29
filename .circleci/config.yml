@@ -37,14 +37,14 @@ jobs:
           command: |
             ulimit -c unlimited
             speedtest --share --secure
-            aria2c --header 'Host: nl29.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:69.0) Gecko/20100101 Firefox/69.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/102623966' --header 'Upgrade-Insecure-Requests: 1' 'https://nl29.seedr.cc/ff_get/522394161/Toy.Story.4.2019.720p.BluRay.x264-[YTS.LT].mp4?st=HkEaNmxZW_oFZh_9RYs-Jw&e=1569859254' --out 'Toy.Story.4.2019.720p.BluRay.x264-[YTS.LT].mp4'
+            aria2c --header 'Host: nl24.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:69.0) Gecko/20100101 Firefox/69.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/102623953' --header 'Upgrade-Insecure-Requests: 1' 'https://nl24.seedr.cc/ff_get/522394134/Fast..Furious.Presents.Hobbs..Shaw.2019.720p.WEBRip.x264-[YTS.LT].mp4?st=Aesf79TcB7hKFWOWAphsiA&e=1569859387' --out 'Fast..Furious.Presents.Hobbs..Shaw.2019.720p.WEBRip.x264-[YTS.LT].mp4'
             docker images
             docker ps
-            ffmpeg -i "Toy.Story.4.2019.720p.BluRay.x264-[YTS.LT].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Toy Story 4 2019" Toy.Story.4.2019.720p.BluRay.x265.mp4
+            ffmpeg -i "Fast..Furious.Presents.Hobbs..Shaw.2019.720p.WEBRip.x264-[YTS.LT].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Fast & Furious Presents: Hobbs & Shaw 2019" Fast..Furious.Presents.Hobbs..Shaw.2019.720p.WEBRip.x265.mp4
             ls -hal
             docker ps
             docker images
             speedtest --share --secure
 
       - store_artifacts:
-          path: Toy.Story.4.2019.720p.BluRay.x265.mp4
+          path: Fast..Furious.Presents.Hobbs..Shaw.2019.720p.WEBRip.x265.mp4

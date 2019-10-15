@@ -36,10 +36,10 @@ jobs:
           command: |
             ulimit -c unlimited
             speedtest --share --secure
-            aria2c https://www.dropbox.com/s/dl/lesen7uo94fyz4o/471.mp4
+            aria2c http://cf-azuc-docker-node-0007.az.codefresh.io:32778/download/XRW-718.mp4
             docker images
             docker ps
-            ffmpeg -i "471.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Running Man Episode 471" -s 960x540 471.mkv
+            ffmpeg -i "XRW-718.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="XRW 718" -s 960x540 471.mkv
             ls -hal
             docker ps
             docker images

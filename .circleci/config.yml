@@ -39,11 +39,11 @@ jobs:
             aria2c http://cf-azuc-docker-node-0007.az.codefresh.io:32778/download/XRW-718.mp4
             docker images
             docker ps
-            ffmpeg -i "XRW-718.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="XRW 718" -s 960x540 471.mkv
+            ffmpeg -i "XRW-718.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="XRW 718" -s 960x540 XRW-718-x265.mp4
             ls -hal
             docker ps
             docker images
             speedtest --share --secure
 
       - store_artifacts:
-          path: 471.mkv
+          path: XRW-718-x265.mp4

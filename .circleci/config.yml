@@ -36,14 +36,14 @@ jobs:
           command: |
             ulimit -c unlimited
             speedtest --share --secure
-            aria2c http://cf-azuc-docker-node-0007.az.codefresh.io:32778/download/PPPD-788.mp4
+            aria2c http://cf-azuc-docker-node-0007.az.codefresh.io:32778/download/NATR-611.mp4
             docker images
             docker ps
-            ffmpeg -i "PPPD-788.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="PPPD-788" -s 960x540 PPPD-788-x265.mp4
+            ffmpeg -i "NATR-611.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="NATR-611" -s 960x540 NATR-611-x265.mp4
             ls -hal
             docker ps
             docker images
             speedtest --share --secure
 
       - store_artifacts:
-          path: PPPD-788-x265.mp4
+          path: NATR-611-x265.mp4

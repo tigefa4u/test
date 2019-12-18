@@ -36,14 +36,14 @@ jobs:
           command: |
             ulimit -c unlimited
             speedtest --share --secure
-            aria2c --header 'Host: nl32.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:69.0) Gecko/20100101 Firefox/69.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --header 'Proxy-Authorization: Basic QFRLLWJkOWU2OTA1LTEyYzItNDU2OS1iMTM5LTRhYTZiODEzZDhmMDpAVEstYmQ5ZTY5MDUtMTJjMi00NTY5LWIxMzktNGFhNmI4MTNkOGYw' --referer 'https://www.seedr.cc/files/105784218' --header 'Upgrade-Insecure-Requests: 1' 'https://nl32.seedr.cc/ff_get/537045493/The.Angry.Birds.Movie.2.2019.720p.BluRay.H264.AAC-RARBG.mp4?st=4FEqw-B4Y5qH2m9YysTW0Q&e=1572622036' --out 'The.Angry.Birds.Movie.2.2019.720p.BluRay.H264.AAC-RARBG.mp4'
+            aria2c --header 'Host: fr1.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/110804230' --header 'Upgrade-Insecure-Requests: 1' 'https://fr1.seedr.cc/ff_get/566590364/Joker.2019.720p.WEBRip.x264-[YTS.LT].mp4?st=45vNX-5iHaF5luvrMeipmQ&e=1576781428' --out 'Joker.2019.720p.WEBRip.x264-[YTS.LT].mp4'
             docker images
             docker ps
-            ffmpeg -i "The.Angry.Birds.Movie.2.2019.720p.BluRay.H264.AAC-RARBG.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="The Angry Birds Movie 2 2019" The.Angry.Birds.Movie.2.2019.720p.BluRay.H265.AAC-RARBG.mp4
+            ffmpeg -i "Joker.2019.720p.WEBRip.x264-[YTS.LT].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Joker 2019" Joker.2019.720p.WEBRip.x265.mp4
             ls -hal
             docker ps
             docker images
             speedtest --share --secure
 
       - store_artifacts:
-          path: The.Angry.Birds.Movie.2.2019.720p.BluRay.H265.AAC-RARBG.mp4
+          path: Joker.2019.720p.WEBRip.x265.mp4

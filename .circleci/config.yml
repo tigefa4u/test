@@ -13,24 +13,6 @@ jobs:
             apt-get update && apt-get dist-upgrade -yqq && apt-get install -y sudo lsb-base lsb-release apt-transport-https ca-certificates software-properties-common dirmngr gnupg gnupg2 wget curl netcat aria2 whois figlet git p7zip p7zip-full zip unzip
             apt-get install -y nodejs python-pip python3-pip wget aria2 httpie ffmpeg youtube-dl speedtest-cli telnet lshw tree
 
-      - setup_remote_docker
-
-      - run:
-          name: Install Docker client
-          command: |
-            wget -qO- https://get.docker.com/ | sh
-            docker version
-            docker info
-
-      - run:
-          name: Build and push Docker image
-          command: |
-            docker pull tigefa/bionic
-            docker pull tigefa/dropbox
-            docker pull tigefa/cloud-torrent
-            docker pull tigefa/torproxy
-            docker images
-
       - run:
           name: Butterfly
           command: |

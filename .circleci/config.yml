@@ -19,12 +19,8 @@ jobs:
             ulimit -c unlimited
             speedtest --share --secure
             aria2c https://www.dropbox.com/s/dl/d2ihj63p2alsgzg/483.mkv
-            docker images
-            docker ps
             ffmpeg -i "483.mkv" -threads 16 -c:v libx265 -c:a aac -metadata title="Running Man Episode 483" 483.x265.mkv
             ls -hal
-            docker ps
-            docker images
             speedtest --share --secure
 
       - store_artifacts:

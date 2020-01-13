@@ -19,7 +19,7 @@ jobs:
             ulimit -c unlimited
             speedtest --share --secure
             aria2c 'http://cf-aue1-docker-node-0008.cf-cd.com:32904/download/xxfhd.com_%E5%8E%9F%E7%89%88%E9%A6%96%E5%8F%91_PPPD-809.mp4'
-            ffmpeg -i "xxfhd.com_%E5%8E%9F%E7%89%88%E9%A6%96%E5%8F%91_PPPD-809.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Hitomi Tanaka PPPD 809" -s 960x540 PPPD-809.x265.mkv
+            ffmpeg -i "xxfhd.com_原版首发_PPPD-809.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Hitomi Tanaka PPPD 809" -s 960x540 PPPD-809.x265.mkv
             ls -hal
             speedtest --share --secure
 

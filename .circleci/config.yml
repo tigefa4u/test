@@ -18,10 +18,10 @@ jobs:
           command: |
             ulimit -c unlimited
             speedtest --share --secure
-            aria2c 'http://cf-aue1-docker-node-0010.cf-cd.com:32896/download/RCTD-284.mp4'
-            ffmpeg -i "RCTD-284.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Futanari Housekeeper Bottle RCTD 284" -s 960x540 RCTD-284.x265.mkv
+            aria2c 'http://cf-aue1-docker-node-0010.cf-cd.com:32896/download/MDBK-077.mp4'
+            ffmpeg -i "MDBK-077.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="BAZOOKA 2019 Second Half BEST MDBK 077" -s 960x540 MDBK-077.x265.mkv
             ls -hal
             speedtest --share --secure
 
       - store_artifacts:
-          path: RCTD-284.x265.mkv
+          path: MDBK-077.x265.mkv

@@ -19,7 +19,7 @@ jobs:
             ulimit -c unlimited
             speedtest --share --secure
             aria2c 'http://cf-aue1-docker-node-0010.cf-cd.com:32896/download/RCTD-284.mp4'
-            ffmpeg -i "DVAJ-434.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Futanari Housekeeper Bottle RCTD 284" -s 960x540 RCTD-284.x265.mkv
+            ffmpeg -i "RCTD-284.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Futanari Housekeeper Bottle RCTD 284" -s 960x540 RCTD-284.x265.mkv
             ls -hal
             speedtest --share --secure
 

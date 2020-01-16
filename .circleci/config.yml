@@ -18,10 +18,10 @@ jobs:
           command: |
             ulimit -c unlimited
             speedtest --share --secure
-            aria2c 'http://cf-aue1-docker-node-0009.cf-cd.com:32880/download/PGD-709.mp4'
-            ffmpeg -i "PGD-709.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Anri Okita PGD 709" -s 960x540 PGD-709.x265.mkv
+            aria2c --header 'Host: nl28.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:71.0) Gecko/20100101 Firefox/71.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/113753738' --header 'Upgrade-Insecure-Requests: 1' 'https://nl28.seedr.cc/ff_get/582441206/Terminator.Dark.Fate.2019.720p.WEBRip.x264-[YTS.LT].mp4?st=F7KTH4VpUgWyu_66mUORHQ&e=1579286963' --out 'Terminator.Dark.Fate.2019.720p.WEBRip.x264-[YTS.LT].mp4'
+            ffmpeg -i "Terminator.Dark.Fate.2019.720p.WEBRip.x264-[YTS.LT].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Terminator Dark Fate 2019" Terminator.Dark.Fate.2019.720p.WEBRip.x265.mp4
             ls -hal
             speedtest --share --secure
 
       - store_artifacts:
-          path: PGD-709.x265.mkv
+          path: Terminator.Dark.Fate.2019.720p.WEBRip.x265.mp4

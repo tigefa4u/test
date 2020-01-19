@@ -18,10 +18,10 @@ jobs:
           command: |
             ulimit -c unlimited
             speedtest --share --secure
-            aria2c 'http://cf-aue1-docker-node-0009.cf-cd.com:32886/download/TANK-19.mp4'
-            ffmpeg -i "TANK-19.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="TANK 19" -s 960x540 TANK-19.x265.mkv
+            aria2c --header 'Host: doc-14-8g-docs.googleusercontent.com' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:71.0) Gecko/20100101 Firefox/71.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://drive.google.com/uc?id=1ja8OQXHZ-NFTc44IraZwzrTpej91c8lR&export=download' --header 'Cookie: AUTH_f14mbjoom8njafno4j2pq8oik9ksa7lg_nonce=4uh4hqnlmva96' --header 'Upgrade-Insecure-Requests: 1' 'https://doc-14-8g-docs.googleusercontent.com/docs/securesc/295bc0gov3oagqv4dejq234vcdd4i3f3/qo5bm1g6n7uj4pn19dbc1du2qk73917u/1579464000000/03287608010741263752/03287608010741263752/1ja8OQXHZ-NFTc44IraZwzrTpej91c8lR?e=download&authuser=0&nonce=4uh4hqnlmva96&user=03287608010741263752&hash=fl8c5s5h5mq0u1gcp1qnf47sn2jgk19p' --out 'Running.Man.E486.200119.720p-NEXT.mp4'
+            ffmpeg -i "Running.Man.E486.200119.720p-NEXT.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Running Man Episode 486" -s 960x540 486.mkv
             ls -hal
             speedtest --share --secure
 
       - store_artifacts:
-          path: TANK-19.x265.mkv
+          path: 486.mkv

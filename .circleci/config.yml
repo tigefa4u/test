@@ -18,10 +18,10 @@ jobs:
           command: |
             ulimit -c unlimited
             speedtest --share --secure
-            aria2c --header 'Host: fr10.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/115656706' --header 'Upgrade-Insecure-Requests: 1' 'https://fr10.seedr.cc/ff_get/592150984/Midway.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4?st=tWIsL_OOMgOJPqLwixu22Q&e=1580961940' --out 'Midway.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4'
-            ffmpeg -i "Midway.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Midway 2019" Midway.2019.720p.WEBRip.x265.mp4
+            aria2c --header 'Host: fr1.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/115811518' --header 'Upgrade-Insecure-Requests: 1' 'https://fr1.seedr.cc/ff_get/592925781/21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4?st=HYf919jrq0RBPO0OMoYJ_w&e=1581085994' --out '21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4'
+            ffmpeg -i "21.Bridges.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="21 Bridges 2019" 21.Bridges.2019.720p.WEBRip.x265.mp4
             ls -hal
             speedtest --share --secure
 
       - store_artifacts:
-          path: Midway.2019.720p.WEBRip.x265.mp4
+          path: 21.Bridges.2019.720p.WEBRip.x265.mp4

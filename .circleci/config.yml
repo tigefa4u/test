@@ -18,10 +18,10 @@ jobs:
           command: |
             ulimit -c unlimited
             speedtest --share --secure
-            aria2c --header 'Host: nl27.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/116034738' --header 'Upgrade-Insecure-Requests: 1' 'https://nl27.seedr.cc/ff_get/594001540/Knives.Out.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4?st=8bTHa5UotJbL0CoWyI-hiA&e=1581268131' --out 'Knives.Out.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4'
-            ffmpeg -i "Knives.Out.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Knives Out 2019" Knives.Out.2019.720p.WEBRip.x265.mp4
+            aria2c 'http://cf-aue1-docker-node-0011.cf-cd.com:32947/download/MIDE-186/MIDE-186.mp4'
+            ffmpeg -i "MIDE-186.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Anri Okita MIDE 186" -s 960x540 MIDE-186-x265.mp4
             ls -hal
             speedtest --share --secure
 
       - store_artifacts:
-          path: Knives.Out.2019.720p.WEBRip.x265.mp4
+          path: MIDE-186-x265.mp4

@@ -18,10 +18,10 @@ jobs:
           command: |
             ulimit -c unlimited
             speedtest --share --secure
-            aria2c --header 'Host: nl35.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --header 'Proxy-Authorization: Basic b3BlbnByb3h5OjI5YmJjNjdmODcyM2IyNTM=' --referer 'https://www.seedr.cc/files/116230316' --header 'Upgrade-Insecure-Requests: 1' 'https://nl35.seedr.cc/ff_get/594966104/Parasite.2019.720p.BluRay.x264-[YTS.LT].mp4?st=kmcckXYorq6dcVU_dkAYOw&e=1581443278' --out 'Parasite.2019.720p.BluRay.x264-[YTS.LT].mp4'
-            ffmpeg -i "Parasite.2019.720p.BluRay.x264-[YTS.LT].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Parasite 2019" Parasite.2019.720p.BluRay.x265.mp4
+            aria2c --header 'Host: nl26.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --header 'Proxy-Authorization: Basic b3BlbnByb3h5OjRmYjdlZDcxODkwYjkzNmE=' --referer 'https://www.seedr.cc/files/116327587' --header 'Upgrade-Insecure-Requests: 1' 'https://nl26.seedr.cc/ff_get/595458237/Frozen.2.2019.720p.AMZN.WEB-DL.DDP5.1.H264-CMRG.mkv?st=CfjDdzDovmatcPNW_s_dFg&e=1581529460' --out 'Frozen.2.2019.720p.AMZN.WEB-DL.DDP5.1.H264-CMRG.mkv'
+            ffmpeg -i "Frozen.2.2019.720p.AMZN.WEB-DL.DDP5.1.H264-CMRG.mkv" -threads 16 -c:v libx265 -c:a aac -metadata title="Frozen 2 2019" Frozen.2.2019.720p.AMZN.WEB-DL.DDP5.1.H265-CMRG.mkv
             ls -hal
             speedtest --share --secure
 
       - store_artifacts:
-          path: Parasite.2019.720p.BluRay.x265.mp4
+          path: Frozen.2.2019.720p.AMZN.WEB-DL.DDP5.1.H265-CMRG.mkv

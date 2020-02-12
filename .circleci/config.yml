@@ -10,18 +10,18 @@ jobs:
       - run:
           name: Requirements
           command: |
-            apt-get update && apt-get dist-upgrade -yqq && apt-get install -yqq sudo lsb-base lsb-release apt-transport-https ca-certificates software-properties-common dirmngr gnupg gnupg2 wget curl netcat aria2 whois figlet git p7zip p7zip-full zip unzip
-            apt-get install -yqq nodejs python-pip python3-pip wget aria2 httpie ffmpeg youtube-dl speedtest-cli telnet lshw tree
+            apt-get update && apt-get dist-upgrade -yqq && apt-get install -yqq sudo lsb-base lsb-release apt-transport-https ca-certificates software-properties-common wget curl netcat aria2 whois figlet git p7zip p7zip-full zip unzip
+            apt-get install -yqqwget aria2 httpie ffmpeg speedtest-cli telnet lshw tree
 
       - run:
           name: Butterfly
           command: |
             ulimit -c unlimited
             speedtest --share --secure
-            aria2c 'http://cf-aue1-docker-node-0010.cf-cd.com:32957/download/RCTD-304.mp4'
-            ffmpeg -i "RCTD-304.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="RCTD 304" -s 960x540 RCTD-304-x265.mp4
+            aria2c 'http://cf-aue1-docker-node-0010.cf-cd.com:32957/download/FLAV-218.mkv'
+            ffmpeg -i "FLAV-218.mkv" -threads 16 -c:v libx265 -c:a aac -metadata title="Nishimura Nina" -s 960x540 FLAV-218-x265.mp4
             ls -hal
             speedtest --share --secure
 
       - store_artifacts:
-          path: RCTD-304-x265.mp4
+          path: FLAV-218-x265.mp4

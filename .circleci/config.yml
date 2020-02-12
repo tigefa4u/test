@@ -18,10 +18,10 @@ jobs:
           command: |
             ulimit -c unlimited
             speedtest --share --secure
-            aria2c 'http://cf-aue1-docker-node-0009.cf-cd.com:32946/download/Charlies.Angels.2019.1080p.WEB-DL.DD5.1.H264-FGT/Charlies.Angels.2019.1080p.WEB-DL.DD5.1.H264-FGT.mkv'
-            ffmpeg -i "Charlies.Angels.2019.1080p.WEB-DL.DD5.1.H264-FGT.mkv" -threads 16 -c:v libx265 -c:a aac -metadata title="Charlies.Angels.2019" -s 1280x534 Charlies.Angels.2019.WEB-DL.DD5.1.H265-FGT.mkv
+            aria2c --header 'Host: cf-aue1-docker-node-0010.cf-cd.com:32957' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --header 'DNT: 1' --referer 'http://cf-aue1-docker-node-0010.cf-cd.com:32957/' --header 'Upgrade-Insecure-Requests: 1' 'http://cf-aue1-docker-node-0010.cf-cd.com:32957/download/DV-1677%20J%20%20.mp4' --out 'DV-1677.mp4'
+            ffmpeg -i "DV-1677.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Shibuya Kaho" -s 960x540 DV-1677-x265.mp4
             ls -hal
             speedtest --share --secure
 
       - store_artifacts:
-          path: Charlies.Angels.2019.WEB-DL.DD5.1.H265-FGT.mkv
+          path: DV-1677-x265.mp4

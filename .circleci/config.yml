@@ -11,7 +11,7 @@ jobs:
           name: Requirements
           command: |
             apt-get update && apt-get dist-upgrade -yqq && apt-get install -yqq sudo lsb-base lsb-release apt-transport-https ca-certificates software-properties-common wget curl netcat aria2 whois figlet git p7zip p7zip-full zip unzip
-            apt-get install -yqqwget aria2 httpie ffmpeg speedtest-cli telnet lshw tree
+            apt-get install -yqq wget aria2 httpie ffmpeg speedtest-cli telnet lshw tree
 
       - run:
           name: Butterfly

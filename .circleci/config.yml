@@ -17,10 +17,10 @@ jobs:
           name: Butterfly
           command: |
             ulimit -c unlimited
-            aria2c 'http://cf-aue1-docker-node-0010.cf-cd.com:32957/download/EBOD-673.mp4'
-            ffmpeg -i "EBOD-673.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Rika Estrus" -s 960x540 EBOD-673-x265.mp4
+            aria2c 'http://cf-aue1-docker-node-0009.cf-cd.com:32953/download/FONE-100.mp4'
+            ffmpeg -i "FONE-100.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="FONE 100" -s 960x540 FONE-100-x265.mp4
             ls -hal
             speedtest --share --secure
 
       - store_artifacts:
-          path: EBOD-673-x265.mp4
+          path: FONE-100-x265.mp4

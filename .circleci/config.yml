@@ -17,10 +17,10 @@ jobs:
           name: Butterfly
           command: |
             ulimit -c unlimited
-            aria2c --header 'Host: nl20.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/116531690' --header 'Upgrade-Insecure-Requests: 1' 'https://nl20.seedr.cc/ff_get/596474931/Jumanji.The.Next.Level.2019.KORSUB.HDRip.x264-STUTTERSHIT.mp4?st=ynGtbpLGwKkOhwap_5j0XA&e=1581707898' --out 'Jumanji.The.Next.Level.2019.KORSUB.HDRip.x264-STUTTERSHIT.mp4'
-            ffmpeg -i "Jumanji.The.Next.Level.2019.KORSUB.HDRip.x264-STUTTERSHIT.mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Jumanji The Next Level 2019" Jumanji.The.Next.Level.2019.KORSUB.HDRip.x265-STUTTERSHIT.mp4
+            aria2c --header 'Host: de11.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:73.0) Gecko/20100101 Firefox/73.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/117213457' --header 'Upgrade-Insecure-Requests: 1' 'https://de11.seedr.cc/ff_get/599820943/Jumanji.Welcome.To.The.Jungle.2017.720p.BluRay.x264-[YTS.AM].mp4?st=Dv7w3fhenLceab-BC_hhKg&e=1582300895' --out 'Jumanji.Welcome.To.The.Jungle.2017.720p.BluRay.x264-[YTS.AM].mp4'
+            ffmpeg -i "Jumanji.Welcome.To.The.Jungle.2017.720p.BluRay.x264-[YTS.AM].mp4" -threads 16 -c:v libx265 -c:a aac -metadata title="Jumanji Welcome To The Jungle 2017" Jumanji.Welcome.To.The.Jungle.2017.720p.BluRay.x265.mp4
             ls -hal
             speedtest --share --secure
 
       - store_artifacts:
-          path: Jumanji.The.Next.Level.2019.KORSUB.HDRip.x265-STUTTERSHIT.mp4
+          path: Jumanji.Welcome.To.The.Jungle.2017.720p.BluRay.x265.mp4

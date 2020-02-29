@@ -1,9 +1,10 @@
 container:
   image: ubuntu
-  # cpu: 8
-  # memory: 21
+  cpu: 8
+  memory: 21
 
 ffmpeg_task:
+  timeout_in: 120m
   install_script:
     - apt-get update
     - apt-get dist-upgrade -yqq

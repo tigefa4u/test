@@ -11,10 +11,10 @@ ffmpeg_task:
     - apt-get install -yqq sudo lsb-base lsb-release apt-transport-https ca-certificates software-properties-common wget curl netcat aria2 whois figlet p7zip p7zip-full zip unzip
     - apt-get install -yqq wget aria2 ffmpeg telnet tree
   test_script:
-    - "aria2c --header 'Host: nl21.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:73.0) Gecko/20100101 Firefox/73.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/118512246' --header 'Upgrade-Insecure-Requests: 1' 'https://nl21.seedr.cc/ff_get/605903872/Jumanji.The.Next.Level.2019.720p.BluRay.x264.AAC-[YTS.MX].mp4?st=_abmWI3evARxq5vLi3JEVQ&e=1583447031' --out 'Jumanji.The.Next.Level.2019.720p.BluRay.x264.AAC-[YTS.MX].mp4'"
-    - ffmpeg -i "Jumanji.The.Next.Level.2019.720p.BluRay.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="Jumanji The Next Level 2019" -preset veryfast Jumanji.The.Next.Level.2019.720p.BluRay.x265.mp4
+    - "aria2c --header 'Host: nl22.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:73.0) Gecko/20100101 Firefox/73.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/118707226' --header 'Upgrade-Insecure-Requests: 1' 'https://nl22.seedr.cc/ff_get/606760340/Richard.Jewell.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4?st=cY7662hh2gto1tK_myBlUA&e=1583624423' --out 'Richard.Jewell.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4'"
+    - ffmpeg -i "Richard.Jewell.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="Richard Jewell 2019" -preset veryfast Richard.Jewell.2019.720p.WEBRip.x265.mp4
   binaries_artifacts:
-    path: "Jumanji.The.Next.Level.2019.720p.BluRay.x265.mp4"
+    path: "Richard.Jewell.2019.720p.WEBRip.x265.mp4"
 
 # docker_builder:
 #   env:

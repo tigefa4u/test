@@ -12,11 +12,11 @@ ffmpeg_task:
     - apt-get install -yqq wget aria2 ffmpeg telnet tree
   test_script:
 #    - aria2c --seed-time=1 --seed-ratio=1.0
-    - "aria2c --header 'Host: nl18.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/120514698' --header 'Upgrade-Insecure-Requests: 1' 'https://nl18.seedr.cc/ff_get/615305051/The.Invisible.Man.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4?st=SqW-mB49nkluSCFY-Y0oYQ&e=1585162594' --out 'The.Invisible.Man.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4'"
-    - ffmpeg -i "The.Invisible.Man.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="The Invisible Man 2020" -preset veryfast The.Invisible.Man.2020.720p.WEBRip.x265.mp4
+    - "aria2c --header 'Host: nl28.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --header 'Proxy-Authorization: Basic b3BlbnByb3h5OmE0ZDE2MjkwNzdjOWY2MzI=' --referer 'https://www.seedr.cc/files/120520364' --header 'Upgrade-Insecure-Requests: 1' 'https://nl28.seedr.cc/ff_get/615378214/SSNI-727.mp4?st=1nyJtzkeryrMkqqXFKu2Zg&e=1585166268' --out 'SSNI-727.mp4'"
+    - ffmpeg -i "SSNI-727.mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="Shion Utsunomiya Rara Anzai" -preset veryfast -s 960x540 SSNI-727-x265.mp4
     - ls -hal
   binaries_artifacts:
-    path: "The.Invisible.Man.2020.720p.WEBRip.x265.mp4"
+    path: "SSNI-727-x265.mp4"
 
 # docker_builder:
 #   env:

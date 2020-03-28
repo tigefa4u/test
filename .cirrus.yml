@@ -11,12 +11,12 @@ ffmpeg_task:
     - apt-get install -yqq sudo lsb-base lsb-release apt-transport-https ca-certificates software-properties-common wget curl netcat aria2 whois figlet p7zip p7zip-full zip unzip
     - apt-get install -yqq wget aria2 ffmpeg telnet tree
   test_script:
-#    - aria2c --seed-time=1 --seed-ratio=1.0 "magnet:?xt=urn:btih:c6cb674b3fe4bbff27a51512213befda54f2243f&dn=Bad.Boys.for.Life.2020.HDRip.x264-STUTTERSHIT&tr=http%3A%2F%2Ftracker.trackerfix.com%3A80%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2890&tr=udp%3A%2F%2F9.rarbg.to%3A2720"
-    - "aria2c http://cf-aue1-docker-node-0011.cf-cd.com:32827/download/Bad.Boys.for.Life.2020.HDRip.x264-STUTTERSHIT/Bad.Boys.for.Life.2020.HDRip.x264-STUTTERSHIT.mp4"
-    - ffmpeg -i "Bad.Boys.for.Life.2020.HDRip.x264-STUTTERSHIT.mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="Bad Boys for Life 2020" -preset veryfast Bad.Boys.for.Life.2020.HDRip.x265-STUTTERSHIT.mp4
+    - aria2c --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/B1EC6938A8E392A13092C6F4732108F5B5B3CF1C"
+#    - "aria2c http://cf-aue1-docker-node-0011.cf-cd.com:32827/download/Bad.Boys.for.Life.2020.HDRip.x264-STUTTERSHIT/Bad.Boys.for.Life.2020.HDRip.x264-STUTTERSHIT.mp4"
+    - ffmpeg -i "Little Women (2019) [720p] [BluRay] [YTS.MX]/Little.Women.2019.720p.BluRay.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="Little Women 2019" -preset veryfast Little.Women.2019.720p.BluRay.x265.mp4
     - ls -hal
   binaries_artifacts:
-    path: "Bad.Boys.for.Life.2020.HDRip.x265-STUTTERSHIT.mp4"
+    path: "Little.Women.2019.720p.BluRay.x265.mp4"
 
 # docker_builder:
 #   env:

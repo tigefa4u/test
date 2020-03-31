@@ -11,12 +11,12 @@ ffmpeg_task:
     - apt-get install -yqq sudo lsb-base lsb-release apt-transport-https ca-certificates software-properties-common wget curl netcat aria2 whois figlet p7zip p7zip-full zip unzip
     - apt-get install -yqq wget aria2 ffmpeg telnet tree
   test_script:
-    - aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/B8806F27D8B51F6943D4E6AF9AC7B57685F984B7"
+    - aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/EF331ED74289B554BF1E85286ABF27C24D788F40"
 #    - ""
-    - ffmpeg -i "The Gentlemen (2019) [720p] [WEBRip] [YTS.MX]/The.Gentlemen.2019.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="The Gentlemen 2019" -preset veryfast The.Gentlemen.2019.720p.WEBRip.x265.mp4
+    - ffmpeg -i "Downhill (2020) [720p] [WEBRip] [YTS.MX]/Downhill.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="Downhill 2020" -preset veryfast Downhill.2020.720p.WEBRip.x265.mp4
     - ls -hal
   binaries_artifacts:
-    path: "The.Gentlemen.2019.720p.WEBRip.x265.mp4"
+    path: "Downhill.2020.720p.WEBRip.x265.mp4"
 
 # docker_builder:
 #   env:

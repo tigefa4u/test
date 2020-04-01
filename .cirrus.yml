@@ -11,12 +11,12 @@ ffmpeg_task:
     - apt-get install -yqq sudo lsb-base lsb-release apt-transport-https ca-certificates software-properties-common wget curl netcat aria2 whois figlet p7zip p7zip-full zip unzip
     - apt-get install -yqq wget aria2 ffmpeg telnet tree
   test_script:
-    - aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://onejav.com/torrent/dnw073/download/715476/onejav.com_dnw073.torrent"
+    - aria2c --bt-seed-unverified=true --seed-time=1 --seed-ratio=1.0 "https://yts.mx/torrent/download/8BF2C6472B247569739A5DCA17BBFC0457F94B9A"
 #    - ""
-    - ffmpeg -i "dnw-073/dnw-073-A.mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="DNW073" -preset veryfast -s 960x540 dnw-073-x265.mp4
+    - ffmpeg -i "Underwater (2020) [720p] [BluRay] [YTS.MX]/Underwater.2020.720p.BluRay.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="Underwater 2020" -preset veryfast Underwater.2020.720p.BluRay.x265.mp4
     - ls -hal
   binaries_artifacts:
-    path: "dnw-073-x265.mp4"
+    path: "Underwater.2020.720p.BluRay.x265.mp4"
 
 # docker_builder:
 #   env:

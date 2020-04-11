@@ -17,7 +17,7 @@ ffmpeg_task:
   binaries_artifacts:
     path: "Trolls.World.Tour.2020.720p.WEBRip.x265.mp4"
 
-# docker_builder:
+## docker_builder:
 #   env:
 #     DOCKER_USERNAME: tigefa
 #     DOCKER_PASSWORD: ENCRYPTED[f5837087e13403c1483dbeeb520330ccbf20981b99c7f58b409a7adb1f4c16df8ab8aabdb5bf269e639e1759377231e3]

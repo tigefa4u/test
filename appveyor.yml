@@ -1,4 +1,6 @@
 version: "{branch}.{build}"
+platform:
+  - x64
 branches:
   only:
     - test

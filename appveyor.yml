@@ -9,7 +9,7 @@ install:
   - sudo apt-get install -yqq wget aria2 ffmpeg telnet tree
 test_script:
   - "aria2c --check-certificate=false --header 'Host: nl26.seedr.cc' --user-agent 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:77.0) Gecko/20100101 Firefox/77.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' --header 'Accept-Language: id,en-US;q=0.7,en;q=0.3' --referer 'https://www.seedr.cc/files/133681246' --header 'Upgrade-Insecure-Requests: 1' 'https://nl26.seedr.cc/ff_get/688557228/We.Bare.Bears.The.Movie.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4?st=acled_VroCdNce2c-f_61A&e=1592671315' --out 'We.Bare.Bears.The.Movie.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4'"
-  - ffmpeg -i "We.Bare.Bears.The.Movie.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="We Bare Bears The Movie 2020" -preset veryfastWe.Bare.Bears.The.Movie.2020.720p.WEBRip.x265.mp4
+  - ffmpeg -i "We.Bare.Bears.The.Movie.2020.720p.WEBRip.x264.AAC-[YTS.MX].mp4" -threads 16 -c:v libx265 -c:a copy -metadata title="We Bare Bears The Movie 2020" -preset veryfast We.Bare.Bears.The.Movie.2020.720p.WEBRip.x265.mp4
   - ls -hal
 artifacts:
   - path: "We.Bare.Bears.The.Movie.2020.720p.WEBRip.x265.mp4"

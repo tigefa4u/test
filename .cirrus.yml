@@ -1,8 +1,11 @@
 container:
-  image: tigefa/bionic
+  image: ghcr.io/tigefa4u/ffmpeg:alpine
   cpu: 8
   memory: 21
-
+ffmpeg_task:
+  timeout_in: 120m
+  requirements_script:
+    - ffmpeg -version
 docker_builder:
   env:
     DOCKER_USERNAME: tigefa

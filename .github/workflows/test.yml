@@ -1,0 +1,5 @@
+runs:
+  using: 'docker'
+  image: 'ghcr.io/tigefa4u/ffmpeg:alpine'
+  args:
+    - ffmpeg -version

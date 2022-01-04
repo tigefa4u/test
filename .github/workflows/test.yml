@@ -8,8 +8,8 @@ on:
 
 jobs:
   build:
-  runs:
-    using: 'docker'
-    image: 'ghcr.io/tigefa4u/ffmpeg:alpine'
-      args:
-      - ffmpeg -version
+    runs:
+      using: 'docker'
+      image: 'ghcr.io/tigefa4u/ffmpeg:alpine'
+        args:
+          - ffmpeg -version

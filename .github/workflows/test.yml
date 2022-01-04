@@ -6,8 +6,10 @@ on:
   pull_request:
     branches: [ main ]
 
-runs:
-  using: 'docker'
-  image: 'ghcr.io/tigefa4u/ffmpeg:alpine'
-  args:
-    - ffmpeg -version
+jobs:
+  build:
+  runs:
+    using: 'docker'
+    image: 'ghcr.io/tigefa4u/ffmpeg:alpine'
+      args:
+      - ffmpeg -version

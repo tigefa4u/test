@@ -65,3 +65,10 @@ $minimal_apt_get_install build-essential sqlite3 libsqlite3-dev
 $minimal_apt_get_install ruby ruby-dev
 $minimal_apt_get_install autoconf automake bison libc6-dev libffi-dev libgdbm-dev libncurses5-dev libtool libyaml-dev make openssl
 $minimal_apt_get_install patch pkg-config zlib1g zlib1g-dev bash bzip2 ca-certificates gawk rsync libreadline-dev libedit-dev
+## Nodejs
+curl -fsSLO --compressed "https://nodejs.org/download/release/v14.18.2/node-v14.18.2-linux-x64.tar.gz" \
+  && tar -xJf "node-v14.18.2-linux-x64.tar.gz" -C /usr/local --strip-components=1 --no-same-owner \
+  && rm "node-v14.18.2-linux-x64.tar.gz" \
+  && ln -s /usr/local/bin/node /usr/local/bin/nodejs \
+  && node --version \
+  && npm --version

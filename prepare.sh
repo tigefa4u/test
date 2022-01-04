@@ -29,7 +29,7 @@ dpkg-divert --local --rename --add /usr/bin/ischroot
 ln -sf /bin/true /usr/bin/ischroot
 
 # apt-utils fix for Ubuntu 16.04
-$minimal_apt_get_install sudo apt-utils
+$minimal_apt_get_install apt-utils
 
 ## Install HTTPS support for APT.
 $minimal_apt_get_install apt-transport-https ca-certificates
@@ -41,9 +41,17 @@ $minimal_apt_get_install software-properties-common
 apt-get dist-upgrade -y --no-install-recommends -o Dpkg::Options::="--force-confold"
 
 ## Fix locale.
-$minimal_apt_get_install language-pack-en language-pack-id
+case $(lsb_release -is) in
+  Ubuntu)
+    $minimal_apt_get_install language-pack-en
+    ;;
+  Debian)
+    $minimal_apt_get_install locales locales-all
+    ;;
+  *)
+    ;;
+esac
 locale-gen en_US
-locale-gen id_ID
-update-locale LANG=id_ID.UTF-8 LC_CTYPE=id_ID.UTF-8
-echo -n id_ID.UTF-8 > /etc/container_environment/LANG
-echo -n id_ID.UTF-8 > /etc/container_environment/LC_CTYPE
+update-locale LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8
+echo -n en_US.UTF-8 > /etc/container_environment/LANG
+echo -n en_US.UTF-8 > /etc/container_environment/LC_CTYPE

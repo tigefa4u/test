@@ -38,7 +38,7 @@ $minimal_apt_get_install apt-transport-https ca-certificates
 $minimal_apt_get_install software-properties-common
 
 ## Requirements
-$minimal_apt_get_install sudo curl wget netcat whois htop lshw nano aria2 dirmngr gnupg gnupg2
+$minimal_apt_get_install sudo curl wget netcat whois htop lshw nano aria2 dirmngr gnupg gnupg2 git
 
 ## Upgrade all packages.
 apt-get dist-upgrade -y --no-install-recommends -o Dpkg::Options::="--force-confold"

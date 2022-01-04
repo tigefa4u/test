@@ -1,3 +1,11 @@
+name: test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
 runs:
   using: 'docker'
   image: 'ghcr.io/tigefa4u/ffmpeg:alpine'

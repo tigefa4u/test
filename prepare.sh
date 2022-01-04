@@ -39,6 +39,7 @@ $minimal_apt_get_install software-properties-common
 
 ## Requirements
 $minimal_apt_get_install sudo curl wget netcat whois htop lshw nano aria2 dirmngr gnupg gnupg2 git
+$minimal_apt_get_install build-essential
 
 ## Upgrade all packages.
 apt-get dist-upgrade -y --no-install-recommends -o Dpkg::Options::="--force-confold"

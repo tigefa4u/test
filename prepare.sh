@@ -68,7 +68,7 @@ $minimal_apt_get_install patch pkg-config zlib1g zlib1g-dev bash bzip2 ca-certif
 $minimal_apt_get_install bzip2 unzip libbz2-dev liblzma-dev xz-utils
 ## Nodejs
 curl -fsSLO --compressed "https://nodejs.org/download/release/v14.18.2/node-v14.18.2-linux-x64.tar.gz" \
-  && tar -xJf "node-v14.18.2-linux-x64.tar.gz" -C /usr/local --strip-components=1 --no-same-owner \
+  && tar -xf "node-v14.18.2-linux-x64.tar.gz" -C /usr/local --strip-components=1 --no-same-owner \
   && rm "node-v14.18.2-linux-x64.tar.gz" \
   && ln -s /usr/local/bin/node /usr/local/bin/nodejs \
   && node --version \

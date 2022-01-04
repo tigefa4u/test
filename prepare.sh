@@ -57,6 +57,9 @@ echo -n en_US.UTF-8 > /etc/container_environment/LANG
 echo -n en_US.UTF-8 > /etc/container_environment/LC_CTYPE
 
 ## Requirements
-$minimal_apt_get_install sudo curl wget netcat whois htop lshw nano aria2 dirmngr gnupg gnupg2 git
+$minimal_apt_get_install tzdata
+ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
+$minimal_apt_get_install sudo curl wget netcat whois htop lshw nano aria2 dirmngr gnupg gnupg2
+$minimal_apt_get_install procps curl file git
 $minimal_apt_get_install build-essential sqlite3 libsqlite3-dev
 $minimal_apt_get_install ruby ruby-dev

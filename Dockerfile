@@ -1,8 +1,4 @@
-ARG BASE_IMAGE=ubuntu:22.04
-FROM $BASE_IMAGE
-
-ARG QEMU_ARCH
-#ADD x86_64_qemu-${QEMU_ARCH}-static.tar.gz /usr/bin
+FROM ubuntu:22.04
 
 COPY . /bd_build
 

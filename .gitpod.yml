@@ -5,7 +5,7 @@ tasks:
       nvm install lts/fermium
       npm install -g npm
       npm install -g @cloudflare/wrangler
-      brew install mc rclone flarectl hugo
+      brew install minio/stable/mc rclone flarectl hugo
 
 vscode:
   extensions:

@@ -1,4 +1,4 @@
-image: gitpod/workspace-nix
+image: gitpod/workspace-full:2022-06-09-10-15-25
 
 tasks:
   - command: |

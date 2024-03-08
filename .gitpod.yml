@@ -1,10 +1,11 @@
-image: gitpod/workspace-full:2022-06-09-10-15-25
+image: gitpod/workspace-full
 
 tasks:
   - command: |
-      nvm install lts/fermium
       npm install -g npm
       npm install -g @cloudflare/wrangler
+      brew update
+      brew upgrade
       brew install minio/stable/mc rclone flarectl hugo
 
 vscode:
